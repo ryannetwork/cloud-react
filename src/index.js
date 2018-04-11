@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
 import { setupCognito, cognito } from 'react-cognito';
-import PageContainer from './components/MainContainer';
+import PageContainer from './components/PageContainer';
 // import App from './App';
 
 // import App from './App';
@@ -97,7 +97,6 @@ setupCognito(store, config);
 // ),  document.getElementById('root'))
 ReactDOM.render(
   <Provider store={store}>
-    {/* <App /> */}
     <PageContainer />
   </Provider>,
   document.getElementById('root'));
