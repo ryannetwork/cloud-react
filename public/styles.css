@@ -198,6 +198,7 @@ h2 {
 	text-transform: capitalize;
 	text-decoration: none;
 	width: 100%;
+	z-index: 999;
 }
 
 .container {
@@ -272,4 +273,8 @@ h2 {
   right: 6px;
   padding: 16px 34px;
 	transform: translateY(-50%);
+}
+
+.modallll input {
+	color: #000000 !important;
 }
