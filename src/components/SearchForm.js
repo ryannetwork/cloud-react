@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import {SearchkitManager} from 'searchkit'
-import {SearchkitProvider} from 'searchkit'
+import {SearchkitManager} from 'searchkit';
+import {SearchkitProvider} from 'searchkit';
 import {
     SearchBox,
     RefinementListFilter,
@@ -15,16 +15,15 @@ import {
     ResetFilters
     } from "searchkit";
 
-
-
-    class SearchForm extends React.Component {
-      render() {
-        const searchkit = new SearchkitManager('http://localhost:5400/search');
-        return <SearchkitProvider searchkit={searchkit} />;
-      }
-    }
-
-
+class SearchForm extends React.Component {
+  render() {
+    const searchkit = new SearchkitManager("http://localhost:5400/search")
+    return (
+      <SearchkitProvider searchkit={searchkit}>
+      </SearchkitProvider>
+    )
+  }
+}
 
 // import React from 'react';
 // import {
@@ -33,7 +32,7 @@ import {
 //   FormControl,
 //   Button
 // }
-//
+
 // const SearchForm = () => (
 //   <Form inline>
 //     <FormGroup controlId="formInlineEmail">
@@ -44,5 +43,5 @@ import {
 //     </Button>
 //   </Form>
 // );
-//
+
 export default SearchForm;
