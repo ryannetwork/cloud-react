@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
 import { setupCognito, cognito } from 'react-cognito';
+import PageContainer from './components/MainContainer';
 import App from './App';
-import SearchForm from '/components/SearchForm'
-
 import config from './config.json';
 
 const reducers = combineReducers({
@@ -19,7 +18,7 @@ setupCognito(store, config);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
-    <SearchForm />
+    {/* <App /> */}
+    <PageContainer />
   </Provider>,
   document.getElementById('root'));
