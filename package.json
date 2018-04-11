@@ -5,6 +5,7 @@
   "dependencies": {
     "amazon-cognito-identity-js": "^1.19.0",
     "bootstrap": "^4.1.0",
+    "npm": "^5.8.0",
     "react": "^15.6.1",
     "react-bootstrap": "^0.32.1",
     "react-cognito": "^1.5.0",
@@ -12,8 +13,13 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.10",
+<<<<<<< HEAD
     "react-sidebar": "^2.3.2",
     "redux": "^3.7.2"
+=======
+    "redux": "^3.7.2",
+    "searchkit": "^2.3.0"
+>>>>>>> 96dac4e0f699c85765023bcfec5e1254ffea228a
   },
   "scripts": {
     "start": "react-scripts start",

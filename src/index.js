@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
 import { setupCognito, cognito } from 'react-cognito';
 import PageContainer from './components/MainContainer';
-import App from './App';
+// import App from './App';
 import config from './config.json';
 
 const reducers = combineReducers({
@@ -21,4 +21,4 @@ ReactDOM.render(
     {/* <App /> */}
     <PageContainer />
   </Provider>,
-  document.getElementById('root'));
+  document.getElementById(''));
