@@ -13,13 +13,9 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.10",
-<<<<<<< HEAD
     "react-sidebar": "^2.3.2",
-    "redux": "^3.7.2"
-=======
     "redux": "^3.7.2",
     "searchkit": "^2.3.0"
->>>>>>> 96dac4e0f699c85765023bcfec5e1254ffea228a
   },
   "scripts": {
     "start": "react-scripts start",

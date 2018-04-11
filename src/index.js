@@ -21,4 +21,4 @@ ReactDOM.render(
     {/* <App /> */}
     <PageContainer />
   </Provider>,
-  document.getElementById(''));
+  document.getElementById('root'));
