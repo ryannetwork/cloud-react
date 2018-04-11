@@ -5,13 +5,13 @@ import { combineReducers, createStore } from 'redux';
 import { setupCognito, cognito } from 'react-cognito';
 import App from './App';
 import SearchForm from './components/SearchForm'
-import {
+import { Layout, TopBar, LayoutBody, SideBar, HierarchicalMenuFilter, LayoutResults,
+ ActionBar, ActionBarRow, HitsStats, SelectedFilters, ResetFilters, MovieHitsGridItem, NoHits,
   SearchkitManager, SearchkitProvider, SearchkitComponent, SearchBox, Hits,  RefinementListFilter
 } from "searchkit"
 
 import config from './config.json';
 
-const searchkit = new SearchkitManager("/");
 const reducers = combineReducers({
     cognito,
 });
@@ -32,18 +32,64 @@ class SearchApp extends SearchkitComponent {
   render() {
     return (
       <div>
-        <SearchBox/>
+        <SearchBox
+        searchOnChange={true}
+        queryOptions={{analyzer:"standard"}}
+        queryFields={["title^5", "languages", "text"]}/>/>
         <Hits/>
       </div>
     )
   }
 }
+
+const searchkit = new SearchkitManager("/");
+
 ReactDOM.render((
     <SearchkitProvider searchkit={searchkit}>
-        <div>
-            <SearchBox/>
-            <RefinementListFilter id="codes" field="codes.raw"/>
-            <Hits/>
-        </div>
+    <div>
+      <SearchBox/>
+      <RefinementListFilter id="actors" field="actors.raw"/>
+      <Hits/>
+    </div>
     </SearchkitProvider>
 ),  document.getElementById('root'))
+// ReactDOM.render((
+//   <SearchkitProvider searchkit={searchkit}>
+// <Layout>
+//   <TopBar>
+//     <SearchBox
+//       autofocus={true}
+//       searchOnChange={true}
+//       prefixQueryFields={["actors^1","type^2","languages","title^10"]}/>
+//   </TopBar>
+//   <LayoutBody>
+//     <SideBar>
+//       <RefinementListFilter
+//         id="codes"
+//         title="Codes"
+//         field="codes.raw"
+//         operator="AND"
+//         size={10}/>
+//     </SideBar>
+//     <LayoutResults>
+//       <ActionBar>
+//
+//         <ActionBarRow>
+//           <HitsStats/>
+//         </ActionBarRow>
+//
+//         <ActionBarRow>
+//           <SelectedFilters/>
+//           <ResetFilters/>
+//         </ActionBarRow>
+//
+//       </ActionBar>
+//       <Hits mod="sk-hits-grid" hitsPerPage={10} itemComponent={MovieHitsGridItem}
+//         sourceFilter={["title", "poster", "imdbId"]}/>
+//       <NoHits/>
+//     </LayoutResults>
+//   </LayoutBody>
+// </Layout>
+// </SearchkitProvider>
+// 
+// ),  document.getElementById('root'))

@@ -17,15 +17,12 @@ import {
 
 
 
-class SearchForm extends React.Component {
-  render() {
-    const searchkit = new SearchkitManager("http://localhost:5400/search")
-    return (
-      <SearchkitProvider searchkit={searchkit}>
-      </SearchkitProvider>
-    )
-  }
-}
+    class SearchForm extends React.Component {
+      render() {
+        const searchkit = new SearchkitManager('http://localhost:5400/search');
+        return <SearchkitProvider searchkit={searchkit} />;
+      }
+    }
 
 
 
