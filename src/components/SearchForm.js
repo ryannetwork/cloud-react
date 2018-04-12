@@ -15,83 +15,56 @@ import {
     Pagination,
     ResetFilters
     } from "searchkit";
+import SearchResults from './SearchResults';
 
 class SearchForm extends React.Component {
   state = {
     inputValue: '',
-    data: []
+    data: [],
+    showResults: false
   }
 
   onChange = (event) => {
     this.setState({
       inputValue: event.target.value
     })
-
-    // axios.get(`http://localhost:5400/_search.json?q=${event.target.value}`).then((data) => {
-    //   console.log("=data", data)
-    // })
   }
 
   onSearchClick = (e) => {
     e.preventDefault()
-    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}`).then((data) => {
+    axios.get(`http://localhost:3001/_search.json?q=${this.state.inputValue}`).then((data) => {
       this.setState({
-        data: data.data.codes
+        data: data.data.codes,
+        showResults: true
       })
     })
   }
 
   render() {
-
-    // <input type="text" data-qa="query" class="sk-search-box__text" placeholder="Search" value="fe">
-    return (
+    const mainSearchForm = (
       <div>
-        <form>
-          <input type="text"
-            onChange={this.onChange}
-            data-qa="query" class="sk-search-box__text"
-            placeholder="Search" value={this.state.inputValue} />
-          <input type="submit" class="button" value="Search" onClick={this.onSearchClick} />
-        </form>
-        <h1>Codes!</h1>
-        {this.state.data.length > 0 && this.state.data.map((code) => {
-          return (
-            <div>
-              <h6>Code:</h6> <span>{code.code_id}</span>
-              <h6>Desc:</h6> <span>{code.desc}</span>
-            </div>
-          )
-        })}
+        <h1 className="icd">ICD-10 Medical Coding Reference</h1>
+        <div className="rectangle-5 search-form">
+          <form>
+            <input type="text"
+              onChange={this.onChange}
+              data-qa="query" className="sk-search-box__text"
+              placeholder="Search" value={this.state.inputValue} />
+              <input type="submit" className="button" value="Search" onClick={this.onSearchClick} />
+            </form>
+          </div>
+          <h2>This website is a free reference tool designed for the fast lookup of all current American ICD-10-CM (diagnosis) and ICD-10-PCS (procedure) medical billing codes.</h2>
       </div>
+    );
+
+    const searchResultsContainer = (
+      <SearchResults results={this.state.data}/>
+    );
+
+    return (
+      this.state.showResults ? searchResultsContainer : mainSearchForm
     )
-    // return (
-    //   <SearchkitProvider searchkit={searchkit}>
-    //     <SearchBox
-    //       autofocus={true}
-    //       searchOnChange={true}
-    //       prefixQueryFields={["actors^1","type^2","languages","title^10"]}/>
-    //     </SearchkitProvider>
-    // )
   }
 }
-
-// import React from 'react';
-// import {
-//   Form,
-//   FormGroup,
-//   FormControl,
-//   Button
-// }
-
-// const SearchForm = () => (
-//   <Form inline>
-//     <FormGroup controlId="formInlineEmail">
-//       <FormControl type="search" placeholder="Enter something ..." />
-//     </FormGroup>
-//     <Button type="submit">
-//       search
-//     </Button>
-//   </Form>
-// );
 
 export default SearchForm;
