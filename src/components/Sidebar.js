@@ -10,13 +10,13 @@ class SideBar extends React.Component {
       return (
         <div className="rectangle-2-copy sidebar">
           <img className="carelogos1" src="images/carecloud-logo.png" alt="carecloud icd-10 codes"/>
-          
+
           <ul className="menu">
             <li>
-              <a href="#" className="menu-item home">Home</a>
+              <a href="/" className="menu-item home">Home</a>
             </li>
             <li>
-              <a href="#" className="menu-item bookmarks">Bookmarks</a>
+              <a href="/bookmarks" className="menu-item bookmarks">Bookmarks</a>
             </li>
             <li>
               <a href="#" className="menu-item chapters">Chapters</a>

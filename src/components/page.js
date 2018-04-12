@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  Route
+} from 'react-router-dom';
 import SideBar from './Sidebar';
 import MainSearch from './MainPage';
 import Login from './Login';
 import {Helmet} from "react-helmet";
+import Bookmarks from './bookmarks';
+import SearchResults from './SearchResults';
 
 
 class Page extends React.Component {
@@ -33,17 +39,21 @@ class Page extends React.Component {
 
    render() {
        return (
-          <div className="main-container rectangle-4">
+          <BrowserRouter>
+              <div className="main-container rectangle-4">
+                  <Helmet>
+                      <title>New tags</title>
+                      <meta name="description" content="my tags Helmet application" />
+                  </Helmet>
 
-             <Helmet>
-                 <title>New tags</title>
-                 <meta name="description" content="my tags Helmet application" />
-             </Helmet>
+                  <SideBar onOpenModal={this.onOpenModal} isLoggedIn={this.props.state === "LOGGED_IN"}/>
+                  <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
 
-             <SideBar onOpenModal={this.onOpenModal} isLoggedIn={this.props.state === "LOGGED_IN"}/>
-             <MainSearch />
-             <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
-          </div>
+            		  <Route exact path="/" component={MainSearch}/>
+                  <Route exact path="/bookmarks" component={Bookmarks}/>
+                  <Route exact path="/search" component={SearchResults}/>
+                </div>
+           </BrowserRouter>
        )
    }
 }
