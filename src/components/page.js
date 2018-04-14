@@ -9,10 +9,10 @@ import MainSearch from './MainPage';
 import Login from './Login';
 import {Helmet} from "react-helmet";
 import Bookmarks from './bookmarks';
-// import Chapters from './chapters';
 import SearchResults from './SearchResults';
-import Chapters from './Chapters.js';
+import Chapters from './Chapters';
 import History from './History';
+import CodesShow from './CodesShow';
 
 
 class Page extends React.Component {
@@ -56,9 +56,9 @@ class Page extends React.Component {
                   <Route exact path="/bookmarks" component={Bookmarks}/>
                   <Route exact path="/chapters" component={Chapters}/>
                   <Route exact path="/search" component={SearchResults}/>
-                  <Route exact path="/chapters" component={Chapters}/>
                   <Route exact path="/history" component={History}/>
                   <Route exact path="/icd-10codes/`{params[:category]}`/`{params[:category]}`" component={SearchResults}/>
+                  <Route exact path="/icd-10/codes/:code_id" render={(props) => (< CodesShow {...props}/>)}/>
                 </div>
            </BrowserRouter>
        )
