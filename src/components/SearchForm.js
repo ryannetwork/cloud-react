@@ -1,20 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import {SearchkitManager} from 'searchkit';
-import {SearchkitProvider} from 'searchkit';
 import axios from 'axios';
-// import {
-//     SearchBox,
-//     RefinementListFilter,
-//     Hits,
-//     HitsStats,
-//     SearchkitComponent,
-//     SelectedFilters,
-//     MenuFilter,
-//     HierarchicalMenuFilter,
-//     Pagination,
-//     ResetFilters
-//     } from "searchkit";
+import Pagination from "react-js-pagination";
 import SearchResults from './SearchResults';
 
 class SearchForm extends React.Component {
@@ -24,6 +11,7 @@ class SearchForm extends React.Component {
       inputValue: '',
       data: [],
       showResults: false,
+      total: 0,
       activePage: 1
     }
   }
@@ -38,22 +26,38 @@ class SearchForm extends React.Component {
   onSearchClick = (e) => {
     e.preventDefault()
     axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}`).then((data) => {
+      console.log(data.data)
       this.setState({
         data: data.data.codes,
-        showResults: true
+        showResults: true,
+        total: data.data.total
+
       })
     })
   }
 
-  onPageClick = (e) => {
-    e.preventDefault()
-    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}&page=${this.state.page}`).then((data) => {
+  handlePageChange = (pageNumber) => {
+      console.log(`active page is ${pageNumber}`);
       this.setState({
-        data: data.data.codes,
-        showResults: true
+        activePage: pageNumber
+      });
+      this.changePage(pageNumber);
+    }
+
+
+  changePage = (pageNumber) => {
+    console.log(this.state);
+    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}&page=${pageNumber}`)
+      .then((data) => {
+        this.setState({
+          data: data.data.codes,
+          showResults: true
+        })
+
       })
-    })
   }
+
+
 
 
   render() {
@@ -74,9 +78,16 @@ class SearchForm extends React.Component {
     );
 
     const searchResultsContainer = (
-
-        <SearchResults results={this.state.data}/>
-
+      <div>
+        <SearchResults results={this.state.data} total={this.state.total} />
+        <Pagination
+          activePage={this.state.activePage}
+          itemsCountPerPage={50}
+          totalItemsCount={this.state.total}
+          pageRangeDisplayed={5}
+          onChange={this.handlePageChange}
+          />
+      </div>
     );
 
     return (

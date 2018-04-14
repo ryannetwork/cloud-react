@@ -10,7 +10,7 @@ import MainSearch from './MainSearch';
 import Login from './Login';
 import {Helmet} from "react-helmet";
 import Bookmarks from './bookmarks';
-import Chapters from './chapters';
+// import Chapters from './chapters';
 import SearchResults from './SearchResults';
 import History from './History';
 import ChapterListOfCodes from './ChapterListOfCodes';
