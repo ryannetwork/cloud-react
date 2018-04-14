@@ -50,12 +50,13 @@ class Page extends React.Component {
 
                   <SideBar onOpenModal={this.onOpenModal} isLoggedIn={this.props.state === "LOGGED_IN"}/>
                   <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
-                  
+
             		  <Route exact path="/icd10" component={MainSearch}/>
-                  <Route exact path="/bookmarks" component={Bookmarks}/>
-                  <Route exact path="/search" component={SearchResults}/>
-                  <Route exact path="/chapters" component={Chapters}/>
-                  <Route exact path="/history" component={History}/>
+                  <Route exact path="/icd10/bookmarks" component={Bookmarks}/>
+                  <Route exact path="/icd10/search" component={SearchResults}/>
+                  <Route exact path="/icd10/chapters" component={Chapters}/>
+                  <Route exact path="/icd10/chapters/:id" component={Chapters}/>
+                  <Route exact path="/icd10/history" component={History}/>
                   <Route exact path="/icd-10codes/`{params[:category]}`/`{params[:category]}`" component={SearchResults}/>
                 </div>
            </BrowserRouter>

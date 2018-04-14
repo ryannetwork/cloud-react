@@ -31,8 +31,8 @@ class ChapterItem extends React.Component {
         }
 
         const resultItemEach = resultItem.map((item, index) =>
-            <li>
-                <a href="#" key={index} onClick={this.listOfChapterCodes}>
+            <li key={index}>
+                <a href="#" onClick={this.listOfChapterCodes}>
                   {item['chapter_number']}: {item['description']}
                 </a>
             </li>
