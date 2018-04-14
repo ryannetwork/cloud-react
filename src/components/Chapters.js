@@ -12,6 +12,10 @@ class Chapters extends React.Component {
         };
     }
 
+    passListOfCodes(){
+      const codes = this.props.list;
+    }
+
     componentWillMount(){
         axios.get(`http://localhost:3001/chapters.json`)
             .then((data) => {
@@ -31,9 +35,7 @@ class Chapters extends React.Component {
         return(
             <div>
                 Chapters:
-
-                    <ChapterItem chapters={this.state.chap}/>
-                
+                <ChapterItem findChapList={this.passListOfCodes} chapters={this.state.chap}/>
             </div>
         )
     }

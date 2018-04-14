@@ -1,10 +1,10 @@
 import React from 'react';
-import Menu from './Menu'
+// import Menu from './Menu'
 
 class SideBar extends React.Component {
-   constructor(props){
-      super(props)
-   }
+   // constructor(props){
+   //    super(props)
+   // }
 
    render() {
       return (
@@ -16,13 +16,13 @@ class SideBar extends React.Component {
               <a href="/icd10" className="menu-item home">Home</a>
             </li>
             <li>
-              <a href="/bookmarks" className="menu-item bookmarks">Bookmarks</a>
+              <a href="/icd10/bookmarks" className="menu-item bookmarks">Bookmarks</a>
             </li>
             <li>
-              <a href="/chapters" className="menu-item chapters">Chapters</a>
+              <a href="/icd10/chapters" className="menu-item chapters">Chapters</a>
             </li>
             <li>
-              <a href="/history" className="menu-item history">History</a>
+              <a href="/icd10/history" className="menu-item history">History</a>
             </li>
           </ul>
           <a href="#" onClick={() => this.props.onOpenModal()} className="menu-item account">{this.props.isLoggedIn ? "Account" : "Sign up" }</a>
