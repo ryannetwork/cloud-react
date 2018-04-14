@@ -13,16 +13,16 @@ class SideBar extends React.Component {
 
           <ul className="menu">
             <li>
-              <a href="/" className="menu-item home">Home</a>
+              <a href="/icd10" className="menu-item home">Home</a>
             </li>
             <li>
               <a href="/bookmarks" className="menu-item bookmarks">Bookmarks</a>
             </li>
             <li>
-              <a href="#" className="menu-item chapters">Chapters</a>
+              <a href="/chapters" className="menu-item chapters">Chapters</a>
             </li>
             <li>
-              <a href="#" className="menu-item history">History</a>
+              <a href="/history" className="menu-item history">History</a>
             </li>
           </ul>
           <a href="#" onClick={() => this.props.onOpenModal()} className="menu-item account">{this.props.isLoggedIn ? "Account" : "Sign up" }</a>

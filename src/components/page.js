@@ -11,6 +11,8 @@ import {Helmet} from "react-helmet";
 import Bookmarks from './bookmarks';
 import Chapters from './chapters';
 import SearchResults from './SearchResults';
+import Chapters from './Chapters.js';
+import History from './History';
 
 
 class Page extends React.Component {
@@ -49,11 +51,14 @@ class Page extends React.Component {
 
                   <SideBar onOpenModal={this.onOpenModal} isLoggedIn={this.props.state === "LOGGED_IN"}/>
                   <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
-
-            		  <Route exact path="/" component={MainSearch}/>
+                  
+            		  <Route exact path="/icd10" component={MainSearch}/>
                   <Route exact path="/bookmarks" component={Bookmarks}/>
                   <Route exact path="/chapters" component={Chapters}/>
                   <Route exact path="/search" component={SearchResults}/>
+                  <Route exact path="/chapters" component={Chapters}/>
+                  <Route exact path="/history" component={History}/>
+                  <Route exact path="/icd-10codes/`{params[:category]}`/`{params[:category]}`" component={SearchResults}/>
                 </div>
            </BrowserRouter>
        )
