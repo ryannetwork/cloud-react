@@ -1,10 +1,10 @@
 import React from 'react';
-import Menu from './Menu'
+// import Menu from './Menu'
 
 class SideBar extends React.Component {
-   constructor(props){
-      super(props)
-   }
+   // constructor(props){
+   //    super(props)
+   // }
 
    render() {
       return (
