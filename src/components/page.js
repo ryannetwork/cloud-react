@@ -9,6 +9,7 @@ import MainSearch from './MainPage';
 import Login from './Login';
 import {Helmet} from "react-helmet";
 import Bookmarks from './bookmarks';
+import Chapters from './chapters';
 import SearchResults from './SearchResults';
 
 
@@ -51,6 +52,7 @@ class Page extends React.Component {
 
             		  <Route exact path="/" component={MainSearch}/>
                   <Route exact path="/bookmarks" component={Bookmarks}/>
+                  <Route exact path="/chapters" component={Chapters}/>
                   <Route exact path="/search" component={SearchResults}/>
                 </div>
            </BrowserRouter>

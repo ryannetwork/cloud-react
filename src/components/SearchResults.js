@@ -10,14 +10,14 @@ class SearchResults extends React.Component {
         return(
             <div>
                 <h1>Search Results</h1>
-                {searchResult.length > 0 && searchResult.map((code) => {
-                    return (
-                        <div>
-                            <h6>Code:</h6> <span>{code.code_id}</span>
-                            <h6>Desc:</h6> <span>{code.desc}</span>
-                        </div>
-                    )
-                })}
+                  {searchResult.map((code) => {
+                      return (
+                          <div>
+                              <h6>Code:</h6> <span>{code.code_id}</span>
+                              <h6>Desc:</h6> <span>{code.desc}</span>
+                          </div>
+                      )
+                  })}
             </div>
         )
     }
