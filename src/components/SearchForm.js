@@ -31,7 +31,6 @@ class SearchForm extends React.Component {
         data: data.data.codes,
         showResults: true,
         total: data.data.total
-
       })
     })
   }
