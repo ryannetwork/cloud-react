@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ChapterItem from './ChapterItem';
+import {Helmet} from "react-helmet";
 
 
 class Chapters extends React.Component {
@@ -34,6 +35,16 @@ class Chapters extends React.Component {
 
         return(
             <div>
+              <Helmet>
+                <title> ICD-10-CM Chapters List - Lookup any ICD-10 Code by Chapter"</title>
+                <meta name="description" content="" />
+                <meta property="og:title" content="ICD-10-CM Chapters List - Lookup any ICD-10 Code by Chapter" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.carecloud.com/icd-10/chapters/" />
+                <meta property="og:image" content="http://example.com/image.jpg" />
+                <meta property="og:description" content="In 2018, ICD-10-CM contains 22 chapters. Easily access all the chapters, code ranges and every ICD-10 code that falls within those ranges.
+" />
+              </Helmet>
                 Chapters:
                 <ChapterItem findChapList={this.passListOfCodes} chapters={this.state.chap}/>
             </div>
