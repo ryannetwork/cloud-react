@@ -9,6 +9,7 @@ import MainSearch from './MainPage';
 import Login from './Login';
 import {Helmet} from "react-helmet";
 import Bookmarks from './bookmarks';
+import Chapters from './chapters';
 import SearchResults from './SearchResults';
 import Chapters from './Chapters.js';
 import History from './History';
@@ -52,11 +53,19 @@ class Page extends React.Component {
                   <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
 
             		  <Route exact path="/icd10" component={MainSearch}/>
+<<<<<<< HEAD
                   <Route exact path="/icd10/bookmarks" component={Bookmarks}/>
                   <Route exact path="/icd10/search" component={SearchResults}/>
                   <Route exact path="/icd10/chapters" component={Chapters}/>
                   <Route exact path="/icd10/chapters/:id" component={Chapters}/>
                   <Route exact path="/icd10/history" component={History}/>
+=======
+                  <Route exact path="/bookmarks" component={Bookmarks}/>
+                  <Route exact path="/chapters" component={Chapters}/>
+                  <Route exact path="/search" component={SearchResults}/>
+                  <Route exact path="/chapters" component={Chapters}/>
+                  <Route exact path="/history" component={History}/>
+>>>>>>> 92397994a2764e9ddba2becb60d1556cf9ad011a
                   <Route exact path="/icd-10codes/`{params[:category]}`/`{params[:category]}`" component={SearchResults}/>
                 </div>
            </BrowserRouter>
