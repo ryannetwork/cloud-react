@@ -31,9 +31,9 @@ class Chapters extends React.Component {
         return(
             <div>
                 Chapters:
-                <ul>
+
                     <ChapterItem chapters={this.state.chap}/>
-                </ul>
+                
             </div>
         )
     }

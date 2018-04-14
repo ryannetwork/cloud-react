@@ -5,8 +5,22 @@ import axios from 'axios';
 
 class ChapterItem extends React.Component {
 
-    listOfChapterCodes(){
-        
+    listOfChapterCodes = (event) => {
+        event.preventDefault(   )
+        let chNum = event.target.text.split(":")[0]
+        console.log(chNum);
+        const options = {
+          headers: { 'content-type': 'json' },
+        };
+
+        axios.get(`http://localhost:3001/chapters/${chNum}`, options)
+            .then((data) => {
+              console.log('log');
+              console.log(data);
+            })
+            .catch(function (error) {
+               console.log(error);
+            })
     }
 
     render() {
@@ -17,15 +31,20 @@ class ChapterItem extends React.Component {
         }
 
         const resultItemEach = resultItem.map((item, index) =>
-            <a key={index} onClick={this.listOfChapterCodes}>
-              {item['chapter_number']}: {item['description']}
-            </a>
+            <li>
+                <a href="#" key={index} onClick={this.listOfChapterCodes}>
+                  {item['chapter_number']}: {item['description']}
+                </a>
+            </li>
         );
 
         return (
-            <li>
+            <ul>
                 {resultItemEach}
-            </li>
+
+            </ul>
+
+
         )
     }
 }
