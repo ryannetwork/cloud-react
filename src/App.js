@@ -25,7 +25,7 @@ const changePassword = () => (
 const updateEmail = () => (
     <div>
       <UpdateEmailForm />
-      <Link to="/">Home</Link>
+      <Link to="/icd10">Home</Link>
     </div>
 );
 
@@ -39,9 +39,13 @@ const registerForm = () => (
     <div>
       <p>Complete this form</p>
       <RegisterForm />
-      <Link to="/">Home</Link>
+      <Link to="/icd10">Home</Link>
     </div>
 );
+
+// const styles ={
+//   fontFamily: 'ProximaNova-Light'
+// }
 
 
 class App extends Component {
@@ -49,11 +53,11 @@ class App extends Component {
     return (
       <Router>
     		<div>
-    		  <Route exact path="/" component={Dashboard}/>
-    		  <Route exact path="/register" component={registerForm}/>
-    		  <Route exact path="/reset" component={passwordReset}/>
-    		  <Route exact path="/change_password" component={changePassword}/>
-    		  <Route exact path="/change_email" component={updateEmail}/>
+    		  <Route exact path="/icd10" component={Dashboard}/>
+    		  <Route exact path="/icd10/register" component={registerForm}/>
+    		  <Route exact path="/icd10/reset" component={passwordReset}/>
+    		  <Route exact path="/icd10/change_password" component={changePassword}/>
+    		  <Route exact path="/icd10/change_email" component={updateEmail}/>
     		</div>
     	</Router>
     );

@@ -1,4 +1,32 @@
+@font-face {
+  font-family: 'ProximaNova-Light';
+  src: local('ProximaNova-Light'),
+	     url('../fonts/ProximaNova-Light.svg#svgFontName') format('svg'),
+       url('../fonts/ProximaNova-Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ProximaNova-Light.ttf')  format('truetype'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'ProximaNova-Regular';
+	src: local('ProximaNova-Regular'),
+			 url('../fonts/ProximaNova-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+			 url('../fonts/ProximaNova-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+			 url('../fonts/ProximaNova-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+	src: local('ProximaNova-Bold'),
+			 url('../fonts/ProximaNova-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+			 url('../fonts/ProximaNova-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+			 url('../fonts/ProximaNova-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
 
 html,
 body,
@@ -8,7 +36,7 @@ body,
 	height: 100%;
 	min-height: 100%;
 	margin: 0;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'ProximaNova-Light', serif;
 }
 
 h1 {
@@ -67,8 +95,6 @@ h2  {
 .menu {
 	list-style: none;
 }
-
-
 
 .modallll input {
 	color: #000000 !important;

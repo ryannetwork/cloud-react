@@ -6,6 +6,7 @@ import SearchResults from './SearchResults';
 import '.././css/searchform.css';
 import SmallSearchForm from './SmallSearchForm';
 
+
 class SearchForm extends React.Component {
   constructor(props){
     super(props)
@@ -26,7 +27,7 @@ class SearchForm extends React.Component {
 
   onSearchClick = (e) => {
     e.preventDefault()
-    axios.get(`http://localhost:3001/_search.json?q=${this.state.inputValue}`).then((data) => {
+    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}`).then((data) => {
       console.log(data.data)
 
       this.setState({

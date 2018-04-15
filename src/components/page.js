@@ -1,11 +1,9 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import {
   BrowserRouter,
   Route
 } from 'react-router-dom';
 import SideBar from './Sidebar';
-import axios from 'axios';
 import MainSearch from './MainSearch';
 import Login from './Login';
 import {Helmet} from "react-helmet";

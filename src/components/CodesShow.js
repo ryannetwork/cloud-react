@@ -13,7 +13,7 @@ class CodesShow extends React.Component{
   }
 
   componentWillMount(){
-    axios.get('http://localhost:3001/codes/'+this.state.code_id)
+    axios.get('http://localhost:5400/codes/'+this.state.code_id)
     .then((data) => {
       console.log(data.data.children)
       this.setState({

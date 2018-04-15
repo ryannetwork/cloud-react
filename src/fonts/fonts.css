@@ -1,14 +1,13 @@
-
 @font-face {
   font-family: 'ProximaNova-Light';
-  src: url('ProximaNova-Light.eot') format('embedded-opentype');
+  src: url('./ProximaNova-Light.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ProximaNova-Light';
-  src:  url('ProximaNova-Light.otf')  format('opentype'),
+  font-family: 'fonts/ProximaNova-Light';
+  src:  url('./ProximaNova-Light.otf')  format('opentype'),
 	     url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAMxUAA8AAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAADMOAAAABoA
 AAAcWJtD00dERUYAALVEAAAAUwAAAFwfpxs2R1BPUwAAwAwAAAwpAAA0HnxMQshHU1VCAAC1mAAA
 CnMAABU6U7hx4k9TLzIAAAHQAAAAWAAAAGBvC4mDY21hcAAACSQAAAP0AAAFruWOq8dnYXNwAAC1
@@ -926,7 +925,7 @@ XxOVopK/J6pFNS8T14nr+PtirpjLy8U8MY/vE/PFfL5f1Ipa/oFYKBbyA+JGsZQfFN8VdfyCWCaW
 84vifvEAbxYPiYd5q1ghVvBvxE6xk7eJTtHJvxUXxUX+negVvfyyZCl5u8yQo3mHzJY5vFuOlwW8
 V06WRbxfTpXTuFFGZIT/Iq+UpXxIlsm53CTnyRv4XblILuKzcrFczO/JJXIJt8mvytu4XX5HLuUP
 ZZ2s4075sFzFXXK13Mm98lX5qpgp98nXxdXyDdkkrpEn5BlxvfxAnhO18iP5uVgk/xXKFLeGwqGZ
-4lv/BbrjgcAAAAB42mNgYGBkAIJjqdtPgeiTUsdYYDQASOAGCAAA) format('woff'), url('ProximaNova-Light.ttf')  format('truetype'), url('ProximaNova-Light.svg#ProximaNova-Light') format('svg');
+4lv/BbrjgcAAAAB42mNgYGBkAIJjqdtPgeiTUsdYYDQASOAGCAAA) format('woff'), url('./ProximaNova-Light.ttf')  format('truetype'), url('./ProximaNova-Light.svg#ProximaNova-Light') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -935,14 +934,14 @@ ZZ2s4075sFzFXXK13Mm98lX5qpgp98nXxdXyDdkkrpEn5BlxvfxAnhO18iP5uVgk/xXKFLeGwqGZ
 
 @font-face {
   font-family: 'ProximaNova-Regular';
-  src: url('ProximaNova-Regular.eot') format('embedded-opentype');
+  src: url('./ProximaNova-Regular.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ProximaNova-Regular';
-  src:  url('ProximaNova-Regular.otf')  format('opentype'),
+  src:  url('./ProximaNova-Regular.otf')  format('opentype'),
 	     url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAMw4AA8AAAAB/jgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAADMHAAAABoA
 AAAcWJtEAUdERUYAALUkAAAAUwAAAFwfpxs2R1BPUwAAv+wAAAwvAAA0HnycQ+pHU1VCAAC1eAAA
 CnMAABU6U7hx4k9TLzIAAAHQAAAAWgAAAGBvb4nJY21hcAAACTQAAAP0AAAFruWOq8dnYXNwAAC1
@@ -1860,7 +1859,7 @@ vkvMFrP5btEgGvjHYq6Yy/eIa8VCvlf8QDTyarFILOZnxd3iHn5O3Cfu5xfFErGE14mNYiO/JLpE
 F78szolz/HtxQVzg9ZKl5A0ySw7nP8hcmcdb5GhZxFvleFnCO+VEOYmbZERG+C15qSznXbJCzuBm
 OUtezYfkPDmP35Pz5Xw+JhfIBdwhb5Q38fvy+3IhfyQbZSN3yfvlUv5ELpMb+YLcLDeLqfLPcoeY
 Jt+QzeJy2SaPipnyQ9kpGuRJeVbMk1+GssW3QuHQVPHd/wKVe4MyAHjaY2BgYGQAgmOp20+B6JNS
-x6RhNABJxgY2AAA=) format('woff'), url('ProximaNova-Regular.ttf')  format('truetype'), url('ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+x6RhNABJxgY2AAA=) format('woff'), url('./ProximaNova-Regular.ttf')  format('truetype'), url('./ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1868,14 +1867,14 @@ x6RhNABJxgY2AAA=) format('woff'), url('ProximaNova-Regular.ttf')  format('truety
 
 @font-face {
   font-family: 'ProximaNova-Bold';
-  src: url('ProximaNova-Bold.eot') format('embedded-opentype');
+  src: url('./ProximaNova-Bold.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ProximaNova-Bold';
-  src:  url('ProximaNova-Bold.otf')  format('opentype'),
+  src:  url('./ProximaNova-Bold.otf')  format('opentype'),
 	     url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAMrYAA8AAAAB+gQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAADKvAAAABoA
 AAAcWJtDpUdERUYAALPYAAAAUwAAAFwfpxs2R1BPUwAAvqAAAAwaAAA0HnyFRb5HU1VCAAC0LAAA
 CnMAABU6U7hx4k9TLzIAAAHQAAAAWgAAAGBwm4m5Y21hcAAACTAAAAP0AAAFruWOq8dnYXNwAACz
@@ -2787,7 +2786,7 @@ n4s5Yg7fKa4RC/ku8RPRzKvFIrGYnxN3iDv59+IecS+/IJaIJbxebBKb+EURFVH+gzgjzvAGcUFc
 4I2SpeSXZI4czn+U+bKQt8pRspS3y3GynN+QE+REbpEhGeK35GRZxbtltZzBETlTXs375Fw5lz+W
 8+Q8PiDny/l8UH5LXs+fyB/LhXxENstmjsp75TI+Lh+Rm/iCfFW+KqbKHfJ1cYncJSPiUtkp94ur
 5GfyqGiSx+S/xFx5NpArvhsIBqaKH/4XvQeE7wAAeNpjYGBgZACCY6nbT4Hok1JH38JoAFHuB9gA
-AA==) format('woff'), url('ProximaNova-Bold.ttf')  format('truetype'), url('ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+AA==) format('woff'), url('./ProximaNova-Bold.ttf')  format('truetype'), url('./ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
