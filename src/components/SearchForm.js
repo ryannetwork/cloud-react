@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import axios from 'axios';
 import Pagination from "react-js-pagination";
 import SearchResults from './SearchResults';
+import '.././css/searchform.css';
 
 class SearchForm extends React.Component {
   constructor(props){
@@ -16,7 +17,6 @@ class SearchForm extends React.Component {
     }
   }
 
-
   onChange = (event) => {
     this.setState({
       inputValue: event.target.value,
@@ -25,7 +25,7 @@ class SearchForm extends React.Component {
 
   onSearchClick = (e) => {
     e.preventDefault()
-    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}`).then((data) => {
+    axios.get(`http://localhost:3001/_search.json?q=${this.state.inputValue}`).then((data) => {
       console.log(data.data)
       this.setState({
         data: data.data.codes,
@@ -41,12 +41,11 @@ class SearchForm extends React.Component {
         activePage: pageNumber
       });
       this.changePage(pageNumber);
-    }
-
+  }
 
   changePage = (pageNumber) => {
     console.log(this.state);
-    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}&page=${pageNumber}`)
+    axios.get(`http://localhost:3001/_search.json?q=${this.state.inputValue}&page=${pageNumber}`)
       .then((data) => {
         this.setState({
           data: data.data.codes,
@@ -56,28 +55,27 @@ class SearchForm extends React.Component {
       })
   }
 
-
-
-
   render() {
     const mainSearchForm = (
-      <div>
-        <h1 className="icd">ICD-10 Medical Coding Reference</h1>
-        <div className="rectangle-5 search-form">
-          <form>
-            <input type="text"
-              onChange={this.onChange}
-              data-qa="query" className="sk-search-box__text"
-              placeholder="Search" value={this.state.inputValue} />
-            <input type="submit" className="button" value="Search" onClick={this.onSearchClick} />
-          </form>
+      <div className="main-code-container">
+        <div>
+          <h1 className="icd">ICD-10 Medical Coding Reference</h1>
+          <div className="rectangle-5 search-form">
+            <form>
+              <input type="text"
+                onChange={this.onChange}
+                data-qa="query" className="sk-search-box__text"
+                placeholder="Search ICD-10 code, keyword or description" value={this.state.inputValue} />
+              <input type="submit" className="button" value="Search" onClick={this.onSearchClick} />
+            </form>
+          </div>
+          <h2>This website is a free reference tool designed for the fast lookup of all current American ICD-10-CM (diagnosis) and ICD-10-PCS (procedure) medical billing codes.</h2>
         </div>
-        <h2>This website is a free reference tool designed for the fast lookup of all current American ICD-10-CM (diagnosis) and ICD-10-PCS (procedure) medical billing codes.</h2>
       </div>
     );
 
     const searchResultsContainer = (
-      <div>
+      <div className="main-code-container">
         <SearchResults results={this.state.data} total={this.state.total} />
         <Pagination
           activePage={this.state.activePage}

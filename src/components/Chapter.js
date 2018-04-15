@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Helmet} from "react-helmet";
+import SmallSearchForm from './SmallSearchForm';
 
 class Chapter extends React.Component {
     constructor(props){
@@ -33,7 +34,7 @@ class Chapter extends React.Component {
     );
 
     return(
-        <div>
+        <div className="main-code-container">
             <Helmet>
                 <title> ICD-10-CM  </title>
                 <meta name="description" content="Lookup ICD-10-CM codes in seconds. Our free tool will help you find diagnosis codes, chapters, codes by specialty and much more. Give it a try today!" />
@@ -42,8 +43,8 @@ class Chapter extends React.Component {
                 <meta property="og:url" content="https://www.carecloud.com/icd-10/" />
                 <meta property="og:image" content="http://example.com/image.jpg" />
                 <meta property="og:description" content="Lookup ICD-10-CM codes in seconds. Our free tool will help you find diagnosis codes, chapters, codes by specialty and much more. Give it a try today!" />
-
             </Helmet>
+            <SmallSearchForm />
             <h1>ChapterListOfCodes:</h1>
             <ul>{codeItemEach}</ul>
         </div>

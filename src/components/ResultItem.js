@@ -13,7 +13,7 @@ class ResultItem extends React.Component {
             <a href={`/icd-10/codes/${itemContent.code_id}`}>
               Code:
               {itemContent.code_id}
-              Desc:
+              Description:
               {itemContent.desc}
             </a>
         )
