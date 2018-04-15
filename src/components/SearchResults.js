@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ResultItem from './ResultItem';
+import '../css/searchResults.css';
 
 
 class SearchResults extends React.Component {
@@ -13,8 +14,7 @@ class SearchResults extends React.Component {
 
     return(
       <div>
-        <h1>Search Results</h1>
-        <ul>
+        <ul className="serchResults">
         {searchResult.map((code, index) => {
           return(
             <li>

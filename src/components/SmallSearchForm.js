@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import '../css/smallsearchform.css';
 
 class SmallSearchForm extends React.Component {
   constructor(props){
@@ -30,11 +31,11 @@ class SmallSearchForm extends React.Component {
       })
     })
   }
-  
+
   render() {
 
     return(
-      <form>
+      <form className="small-search-form">
         <input type="text"
           onChange={this.onChange}
           data-qa="query" className="sk-search-box__text"

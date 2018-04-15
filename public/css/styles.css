@@ -52,9 +52,12 @@ h2  {
 	position: absolute;
 	top:0;
 	left: 0;
-	margin-left: 266px;
+	background: linear-gradient(140.81deg, #3587CA 0%, #002451 100%);
+	padding-left: 266px;
 	flex-direction: column;
 	justify-content: space-evenly;
+	min-height: 100%;
+	width: 100%;
 }
 
 .main-code-container > div {

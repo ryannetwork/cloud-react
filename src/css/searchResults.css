@@ -1,0 +1,10 @@
+.serchResults {
+  padding-left: 0;
+  list-style: none;
+}
+
+.serchResults li {
+  background-color: rgba(0,160,224,0.1);
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.1);
+  padding: 15px 0px 15px 50px;
+}

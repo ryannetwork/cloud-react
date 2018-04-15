@@ -4,6 +4,7 @@ import axios from 'axios';
 import Pagination from "react-js-pagination";
 import SearchResults from './SearchResults';
 import '.././css/searchform.css';
+import SmallSearchForm from './SmallSearchForm';
 
 class SearchForm extends React.Component {
   constructor(props){
@@ -76,14 +77,18 @@ class SearchForm extends React.Component {
 
     const searchResultsContainer = (
       <div className="main-code-container">
-        <SearchResults results={this.state.data} total={this.state.total} />
-        <Pagination
-          activePage={this.state.activePage}
-          itemsCountPerPage={50}
-          totalItemsCount={this.state.total}
-          pageRangeDisplayed={5}
-          onChange={this.handlePageChange}
-          />
+        <h1>ICD-10 Medical Coding Reference</h1>
+        <div className="searchResults">
+            <SmallSearchForm />
+            <SearchResults results={this.state.data} total={this.state.total} />
+            <Pagination
+              activePage={this.state.activePage}
+              itemsCountPerPage={50}
+              totalItemsCount={this.state.total}
+              pageRangeDisplayed={5}
+              onChange={this.handlePageChange}
+              />
+        </div>
       </div>
     );
 
