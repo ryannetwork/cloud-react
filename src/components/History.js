@@ -1,15 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CodesShow from './CodesShow';
 
 
 class History extends React.Component {
+  constructor(props){
+    super(props);
+  }
 
     render() {
 
         return(
-            <div className="main-code-container">
-                History
-            </div>
+          <div>
+            {localStorage.getItem('recents').split(',').map((code_id) => {
+              return(
+                <li>
+                  <a className="history-container" href={`/icd-10/codes/${code_id}`}>{code_id}</a>
+                </li>
+              )
+            })}
+          </div>
         )
     }
 }

@@ -17,6 +17,7 @@ class SearchForm extends React.Component {
       total: 0,
       activePage: 1
     }
+  
   }
 
   onChange = (event) => {
@@ -48,7 +49,7 @@ class SearchForm extends React.Component {
 
   changePage = (pageNumber) => {
     console.log(this.state);
-    axios.get(`http://localhost:3001/_search.json?q=${this.state.inputValue}&page=${pageNumber}`)
+    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}&page=${pageNumber}`)
       .then((data) => {
         console.log(data)
         this.setState({

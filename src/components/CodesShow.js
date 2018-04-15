@@ -13,6 +13,11 @@ class CodesShow extends React.Component{
   }
 
   componentWillMount(){
+    let existingRecents = localStorage.getItem('recents').split(',');
+    existingRecents.push(this.state.code_id);
+    existingRecents = [...new Set(existingRecents)];
+    localStorage.setItem('recents', existingRecents.join(','))
+
     axios.get('http://localhost:5400/codes/'+this.state.code_id)
     .then((data) => {
       console.log(data.data.children)
@@ -22,7 +27,7 @@ class CodesShow extends React.Component{
       });
     });
   }
-m
+
   render(){
     return(
       <div className="main-code-container">
