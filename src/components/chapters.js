@@ -7,7 +7,6 @@ import SearchForm from "./SearchForm";
 import '../css/chapters.css';
 import SmallSearchForm from './SmallSearchForm';
 
-
 class Chapters extends React.Component {
     constructor(props){
         super(props);
