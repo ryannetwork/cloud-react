@@ -10,6 +10,7 @@ class SearchResults extends React.Component {
 
   render() {
     var searchResult = this.props.results;
+    var inputValue = this.props.inputValue;
 
     return(
       <div>
@@ -18,7 +19,7 @@ class SearchResults extends React.Component {
         {searchResult.map((code, index) => {
           return(
             <li>
-              <ResultItem itemValue={code} key={index}/>
+              <ResultItem itemValue={code} key={index} inputValue={inputValue}/> 
             </li>
           )
         })}

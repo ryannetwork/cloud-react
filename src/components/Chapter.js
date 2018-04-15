@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class ChapterListOfCodes extends React.Component {
+class Chapter extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -11,7 +11,7 @@ class ChapterListOfCodes extends React.Component {
 
     componentWillMount(){
         const chapID = this.props.match.params.id
-        axios.get(`http://localhost:3001/chapters/${chapID}`)
+        axios.get(`http://localhost:5400/chapters/${chapID}`)
                .then((data) => {
                  this.setState({
                      data: data.data
@@ -39,4 +39,4 @@ class ChapterListOfCodes extends React.Component {
         )
     }
 }
-export default ChapterListOfCodes;
+export default Chapter;

@@ -27,6 +27,7 @@ class SearchForm extends React.Component {
     e.preventDefault()
     axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}`).then((data) => {
       console.log(data.data)
+
       this.setState({
         data: data.data.codes,
         showResults: true,
@@ -48,6 +49,7 @@ class SearchForm extends React.Component {
     console.log(this.state);
     axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}&page=${pageNumber}`)
       .then((data) => {
+        console.log(data)
         this.setState({
           data: data.data.codes,
           showResults: true
@@ -78,7 +80,7 @@ class SearchForm extends React.Component {
 
     const searchResultsContainer = (
       <div>
-        <SearchResults results={this.state.data} total={this.state.total} />
+        <SearchResults results={this.state.data} total={this.state.total} inputValue={this.state.inputValue} />
         <Pagination
           activePage={this.state.activePage}
           itemsCountPerPage={50}

@@ -11,10 +11,10 @@ import Login from './Login';
 import {Helmet} from "react-helmet";
 import Bookmarks from './bookmarks';
 import SearchResults from './SearchResults';
-import Chapters from './chapters';
+import Chapters from './Chapters';
 import History from './History';
 import CodesShow from './CodesShow';
-import ChapterListOfCodes from './ChapterListOfCodes';
+import Chapter from './Chapter';
 
 
 class Page extends React.Component {
@@ -76,7 +76,7 @@ class Page extends React.Component {
                   <Route exact path="/icd10/bookmarks" component={Bookmarks}/>
                   <Route exact path="/icd10/search" component={SearchResults}/>
                   <Route exact path="/icd10/chapters" component={() => (<Chapters list={this.listOfChapterCodes} />)}/>
-                  <Route exact path="/icd10/chapter/:id" render={(props)=> (<ChapterListOfCodes {...props} />)}/>
+                  <Route exact path="/icd10/chapter/:id" render={(props)=> (<Chapter {...props} />)}/>
                   <Route exact path="/icd10/history" component={History}/>
                   <Route exact path="/icd-10codes/`{params[:category]}`/`{params[:category]}`" component={SearchResults}/>
                   <Route exact path="/icd-10/codes/:code_id" render={(props) => (< CodesShow {...props}/>)}/>

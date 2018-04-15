@@ -17,7 +17,7 @@ class Chapters extends React.Component {
     }
 
     componentWillMount(){
-        axios.get(`http://localhost:3001/chapters.json`)
+        axios.get(`http://localhost:5400/chapters.json`)
             .then((data) => {
               const chaptie = data.data
               console.log("COMPONENT WILL Mount messages : ", chaptie);
