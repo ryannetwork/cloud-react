@@ -60,6 +60,10 @@ h2  {
 	width: 100%;
 }
 
+.main-code-container > div.searchContainer {
+	margin-top: 28vh;
+}
+
 .menu {
 	list-style: none;
 }

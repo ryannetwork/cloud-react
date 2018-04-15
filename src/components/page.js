@@ -15,6 +15,7 @@ import Chapters from './Chapters';
 import History from './History';
 import CodesShow from './CodesShow';
 import Chapter from './Chapter';
+import '../css/page.css';
 
 
 class Page extends React.Component {

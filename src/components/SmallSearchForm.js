@@ -39,7 +39,7 @@ class SmallSearchForm extends React.Component {
         <input type="text"
           onChange={this.onChange}
           data-qa="query" className="sk-search-box__text"
-          placeholder="Search ICD-10 code, keyword or description" value={this.state.inputValue} />
+          placeholder="Search" value={this.state.inputValue} />
         <input type="submit" className="button" value="Search" onClick={this.onSearchClick} />
       </form>
     )

@@ -59,7 +59,7 @@ class SearchForm extends React.Component {
   render() {
     const mainSearchForm = (
       <div className="main-code-container">
-        <div>
+        <div className="searchContainer">
           <h1 className="icd">ICD-10 Medical Coding Reference</h1>
           <div className="rectangle-5 search-form">
             <form>

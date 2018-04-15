@@ -30,6 +30,10 @@
 	width: 100%;
 }
 
+.search-form form input[type="text"]:focus {
+  outline-width: 0px;
+}
+
 .search-form form input::-webkit-input-placeholder,
 .search-form form input::-moz-placeholder,
 .search-form form input:-ms-input-placeholder,
