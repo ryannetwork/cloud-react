@@ -15,63 +15,49 @@ import Chapters from './Chapters';
 import History from './History';
 import CodesShow from './CodesShow';
 import Chapter from './Chapter';
+import '../css/page.css';
 
 
 class Page extends React.Component {
-   constructor(props){
-      super(props);
-      this.state = {
-        displayModal: false,
-        modalState: false
-      };
-      this.onOpenModal = this.onOpenModal.bind(this);
-      this.onCloseModal = this.onCloseModal.bind(this);
-   }
+  constructor(props){
+    super(props);
+    this.state = {
+      displayModal: false,
+      modalState: false
+    };
+    this.onOpenModal = this.onOpenModal.bind(this);
+    this.onCloseModal = this.onCloseModal.bind(this);
+  }
 
-   onOpenModal = () => {
-     this.setState({
-        displayModal: true,
-        modalState: true
-     });
-   };
+  onOpenModal = () => {
+    this.setState({
+      displayModal: true,
+      modalState: true
+    });
+  };
 
-   onCloseModal = () => {
-     this.setState({
-        displayModal: false,
-        modalState: false
-     });
-   };
+  onCloseModal = () => {
+    this.setState({
+      displayModal: false,
+      modalState: false
+    });
+  };
 
-   // listOfChapterCodes = (event) => {
-   //     event.preventDefault(   );
-   //     console.log(event);
-   //     let chNum = event.target.text.split(":")[0]
-   //     console.log(chNum);
-   //     const options = {
-   //       headers: { 'content-type': 'json' },
-   //     };
-   //
-   //     axios.get(`http://localhost:3001/chapters/${chNum}`, options)
-   //         .then((data) => {
-   //           console.log(data);
-   //         })
-   //         .catch(function (error) {
-   //            console.log(error);
-   //         })
-   // }
-
-   render() {
-       return (
-          <BrowserRouter>
-              <div className="main-container rectangle-4">
-                  <Helmet>
-                      <title>New tags</title>
-                      <meta name="description" content="my tags Helmet application" />
-                  </Helmet>
-
-                  <SideBar onOpenModal={this.onOpenModal} isLoggedIn={this.props.state === "LOGGED_IN"}/>
-                  <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
-
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="main-container rectangle-4">
+          <Helmet>
+            <title>Free ICD-10-CM Codes - Lookup any ICD-10 Diagnosis Code | CareCloud</title>
+            <meta name="description" content="Lookup ICD-10-CM codes in seconds. Our free tool will help you find diagnosis codes, chapters, codes by specialty and much more. Give it a try today!" />
+            <meta property="og:title" content="Free ICD-10-CM Codes - Lookup any ICD-10 Diagnosis Code | CareCloud" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.carecloud.com/icd-10/" />
+            <meta property="og:image" content="http://example.com/image.jpg" />
+            <meta property="og:description" content="Lookup ICD-10-CM codes in seconds. Our free tool will help you find diagnosis codes, chapters, codes by specialty and much more. Give it a try today!" />
+          </Helmet>
+          <SideBar onOpenModal={this.onOpenModal} isLoggedIn={this.props.state === "LOGGED_IN"}/>
+          <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
             		  <Route exact path="/icd10" component={MainSearch}/>
                   <Route exact path="/icd10/bookmarks" component={Bookmarks}/>
                   <Route exact path="/icd10/search" component={SearchResults}/>

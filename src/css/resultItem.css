@@ -1,0 +1,26 @@
+.codeLink {
+  display: flex;
+}
+
+.codeLink:hover {
+  text-decoration: none;
+}
+
+.bookmark {
+  background: none;
+  border: 0;
+  margin-right: 29px;
+}
+
+.codeNum {
+  display:block;
+  font-size: 28px;
+  color: #5CD7FF;
+  text-transform: uppercase;
+  width: 20%;
+}
+
+.codeDesc {
+  color: #ffffff;
+  font-size: 28px;
+}

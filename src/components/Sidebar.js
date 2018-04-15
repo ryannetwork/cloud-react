@@ -1,15 +1,15 @@
 import React from 'react';
+import "./../css/sidebar.css";
+import logo from '../images/carecloud-logo.png'; // Tell Webpack this JS file uses this image
+
 // import Menu from './Menu'
 
 class SideBar extends React.Component {
-   // constructor(props){
-   //    super(props)
-   // }
 
    render() {
       return (
         <div className="rectangle-2-copy sidebar">
-          <img className="carelogos1" src="images/carecloud-logo.png" alt="carecloud icd-10 codes"/>
+          <img className="carelogos1" src={logo} alt="carecloud icd-10 codes"/>
 
           <ul className="menu">
             <li>

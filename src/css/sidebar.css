@@ -1,0 +1,85 @@
+.sidebar {
+	display: flex;
+	position: fixed;
+	top:0;
+	left: 0;
+	height: 100%;
+	min-height: 100%;
+	background: #2e7abb; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #2e7abb 0%, #1b538e 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #2e7abb 0%,#1b538e 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #2e7abb 0%,#1b538e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e7abb', endColorstr='#1b538e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	flex-direction: column;
+	justify-content: space-between;
+	width: 265px;
+	min-width: 266px;
+	z-index:9376363;
+}
+
+.sidebar .home{
+	background: url('../images/home.png') no-repeat 18% 50%;
+	background-size: 37px 38px;
+}
+
+.sidebar .bookmarks{
+	background: url('../images/bookmarks-icon.png') no-repeat 18% 50%;
+	background-size: 26px 42px;
+}
+
+.sidebar .chapters{
+	background: url('../images/chapters-icon.png') no-repeat 18% 50%;
+	background-size: 30px 39px;
+}
+
+.sidebar .history {
+	background: url('../images/history-icon.png') no-repeat 18% 50%;
+	background-size: 43px 40px;
+}
+
+.sidebar img {
+	display: block;
+	margin: 0 auto;
+	margin-top: 46px;
+	max-width: 202px;
+	width: 100%;
+	height: auto;
+}
+
+.sidebar ul {
+	padding-left: 0;
+}
+
+.sidebar ul li a {
+	display: block;
+	font-size: 28px;
+	color: #ffffff;
+	text-transform: capitalize;
+	padding: 30px 0 30px 98px;
+	text-decoration: none;
+}
+
+
+.account {
+	display: block;
+	font-size: 28px;
+	box-sizing: border-box;
+	background: #1a4c89 url('../images/account-icon.png') no-repeat;
+	background-position: 46px 26px;
+	background-size: 38px 43px;
+	color: #ffffff;
+	padding: 30px 0 30px 98px;
+	text-transform: capitalize;
+	text-decoration: none;
+	width: 100%;
+	z-index: 999;
+	transition: all 0.2s linear;
+}
+
+.account:hover {
+	text-decoration: none;
+	color: #ffffff;
+	background: #17447b url('../images/account-icon.png') no-repeat;
+	background-position: 46px 26px;
+	background-size: 38px 43px;
+}

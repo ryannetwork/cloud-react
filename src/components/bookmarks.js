@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 class Bookmarks extends React.Component {
    render() {
        return (
-         <div>Bookmarks here</div>
+         <div className="main-code-container">Bookmarks here</div>
        )
    }
 }
