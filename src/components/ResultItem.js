@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../css/resultItem.css';
 import bookmark from '../images/bookmark-small-serp.png';
+import Highlighter from 'react-highlight-words'
 
 
 class ResultItem extends React.Component {
@@ -17,13 +18,17 @@ class ResultItem extends React.Component {
               <button className="bookmark"><img src={bookmark} alt="bookmark"/></button>
               <span className="codeNum">{itemContent.code_id}</span>
               <span className="codeDesc">
-                {itemContent.desc.slice(0, itemContent.desc.indexOf(input))}
-                <span style={{backgroundColor:'yellow'}}>{input}</span>
-                {itemContent.desc.slice(itemContent.desc.indexOf(input) + input.length + 1)}
+                <Highlighter
+                  highlightClassName='Highlighter'
+                  searchWords={[input]}
+                  autoEscape={true}
+                  textToHighlight={itemContent.desc}
+                />
              </span>
             </a>
         )
     }
 }
+
 
 export default ResultItem;
