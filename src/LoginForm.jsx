@@ -33,18 +33,23 @@ class LoginForm extends React.Component {
     <form onSubmit={this.onSubmit}>
       <div>{this.props.error}</div>
       <div>{this.state.email}</div>
-      <label>
-        Username
-        <input placeholder="Username" value={this.state.username} onChange={this.changeUsername} required />
-      </label>
-      <label>
-        Password
-        <input placeholder="Password" onChange={this.changePassword} type="password" required />
-      </label>
-      <button type="submit">Sign in</button>
+      <div className="form-group">
+        <label>
+          Username
+          <input className="form-control" placeholder="Username" value={this.state.username} onChange={this.changeUsername} required />
+        </label>
+      </div>
+      <div className="form-group">
+        <label>
+          Password
+          <input className="form-control" placeholder="Password" onChange={this.changePassword} type="password" required />
+        </label>
+      </div>
+      <button className="btn btn-primary" type="submit">Sign in</button>
     </form>
   )
 }
+
 LoginForm.propTypes = {
   onSubmit: PropTypes.func,
   clearCache: PropTypes.func,

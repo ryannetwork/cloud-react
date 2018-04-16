@@ -39,7 +39,7 @@ class ConfirmForm extends React.Component {
   }
 
   render = () => (
-    <form onSubmit={this.onSubmit}>
+    <form onSubmit={this.onSubmit} className="form-group">
       <div>{this.state.error}</div>
       <label>
         Verification Code

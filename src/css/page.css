@@ -91,13 +91,20 @@ h2  {
 
 .results h1,
 .chapters h1,
+.chapter h1,
 .history h1,
+.bookmarks h1,
 .code h1 {
   font-size:28px;
 	letter-spacing: 1px;
 	margin-top: 0;
 	padding: 70px 0 60px 30px;
   text-align:left;
+}
+
+.history h2 {
+	text-align: left;
+	width: 100%;
 }
 
 .main-code-container > div.searchContainer {

@@ -17,8 +17,8 @@ class History extends React.Component {
           return null;
       }
 
-      const codeHistory = codeStorage.split(',').map((code_id) =>
-          <li className="list-item">
+      const codeHistory = codeStorage.split(',').map((code_id, index) =>
+          <li className="list-item" key={index}>
               <a className="history-container" href={`/icd-10/codes/${code_id}`}>{code_id}</a>
           </li>
       );

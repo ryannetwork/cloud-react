@@ -14,16 +14,17 @@ import RegisterForm from './RegisterForm';
 import ChangePasswordForm from './ChangePasswordForm';
 import UpdateEmailForm from './UpdateEmailForm';
 import PasswordResetForm from './PasswordResetForm';
+import './css/app.css';
 
 const changePassword = () => (
-    <div>
+    <div className="form-group">
       <ChangePasswordForm />
-      <Link to="/">Home</Link>
+      <Link to="/icd10">Home</Link>
     </div>
 );
 
 const updateEmail = () => (
-    <div>
+    <div className="form-group">
       <UpdateEmailForm />
       <Link to="/icd10">Home</Link>
     </div>
@@ -36,23 +37,18 @@ const passwordReset = () => (
 );
 
 const registerForm = () => (
-    <div>
+    <div className="form-group">
       <p>Complete this form</p>
       <RegisterForm />
       <Link to="/icd10">Home</Link>
     </div>
 );
 
-// const styles ={
-//   fontFamily: 'ProximaNova-Light'
-// }
-
-
 class App extends Component {
   render() {
     return (
-      <Router>
-    		<div>
+      <Router className="router">
+    		<div className="form-group val">
     		  <Route exact path="/icd10" component={Dashboard}/>
     		  <Route exact path="/icd10/register" component={registerForm}/>
     		  <Route exact path="/icd10/reset" component={passwordReset}/>

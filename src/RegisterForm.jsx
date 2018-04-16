@@ -50,19 +50,24 @@ class RegisterForm extends React.Component {
   render = () => (
     <form onSubmit={this.onSubmit}>
       <div>{this.state.error}</div>
-      <label>
-        Username
-        <input placeholder="username" type="email" onChange={this.changeUsername} required />
-      </label>
+      <div className="form-group">
+          <label>Username
+          <input className="form-control" placeholder="username" type="email" onChange={this.changeUsername} required />
+          </label>
+      </div>
+      <div className="form-group">
       <label>
         Password
-        <input placeholder="password" type="password" onChange={this.changePassword} required />
+        <input className="form-control" placeholder="password" type="password" onChange={this.changePassword} required />
       </label>
+      </div>
+      <div className="form-group">
       <label>
         Email Address
-        <input placeholder="email" type="email" onChange={this.changeEmail} required />
+        <input className="form-control" placeholder="email" type="email" onChange={this.changeEmail} required />
       </label>
-      <button type="submit">Register</button>
+      </div>
+      <button className="btn btn-primary" type="submit">Register</button>
     </form>
   )
 }

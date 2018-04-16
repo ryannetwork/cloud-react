@@ -34,15 +34,19 @@ class ChangePasswordForm extends React.Component {
   render = () => (
     <form onSubmit={this.onSubmit}>
       <div>{this.state.error}</div>
+      <div className="form-group">
       <label>
         Old Password
-        <input placeholder="old password" onChange={this.changeOldPassword} required />
+        <input className="form-control" placeholder="old password" onChange={this.changeOldPassword} required />
       </label>
+      </div>
+      <div className="form-group">
       <label>
         New Password
-        <input placeholder="new password" onChange={this.changeNewPassword} required />
+        <input className="form-control" placeholder="new password" onChange={this.changeNewPassword} required />
       </label>
-      <button type="submit">Set new password</button>
+      </div>
+      <button className="btn btn-primary" type="submit">Set new password</button>
     </form>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import '../css/list.css';
 import SmallSearchForm from './SmallSearchForm';
+import ResultItem from './ResultItem';
 
 class Chapter extends React.Component {
     constructor(props){
@@ -27,9 +28,7 @@ class Chapter extends React.Component {
     render() {
         const codeItemEach = this.state.data.map((item, index) =>
             <li key={index} className="list-item">
-                <a href='#'>
-                  {item['code_id']}: {item['desc']}
-                </a>
+                <ResultItem itemValue={item} key={index}/>
             </li>
         );
 
