@@ -9,7 +9,7 @@
 .search-form form {
 	position: relative;
 	margin: 0 auto;
-	width: 70%;
+	width: 82%;
 }
 
 .search-form form input[type="text"]{
@@ -20,7 +20,7 @@
 	border-radius: 60px;
 	border: 0;
 	box-sizing: border-box;
-	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4),  0px 1px 0px #001e3e;
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px 3px 20px 2px rgba(0, 30, 62, 0.3);
 	height: 106px;
 	line-height: 1.2;
 	padding-right: 200px;
@@ -63,5 +63,12 @@
 	right: 8px;
 	padding: 22px 39px;
 	transform: translateY(-50%);
+	transition: all 0.4s linear;
 	text-shadow: 0px 1px 0px #3f9ebf;
+}
+
+.search-form form input[type="submit"]:hover,
+.search-form form input[type="submit"]:focus {
+	 border: 0;
+	 background: linear-gradient(to bottom, #04bbde 0%,#038dc7 100%);
 }

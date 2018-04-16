@@ -13,10 +13,18 @@ class CodesShow extends React.Component{
   }
 
   componentWillMount(){
-    let existingRecents = localStorage.getItem('recents').split(',');
-    existingRecents.push(this.state.code_id);
-    existingRecents = [...new Set(existingRecents)];
-    localStorage.setItem('recents', existingRecents.join(','))
+
+    if (localStorage.getItem("recents") !== null){
+
+      var existingRecents = localStorage.getItem('recents').split(',');
+      existingRecents.push(this.state.code_id);
+      existingRecents = [...new Set(existingRecents)];
+      localStorage.setItem('recents', existingRecents.join(','))
+
+    } else {
+      console.log('nothing in local st');
+      localStorage.setItem('recents', [].join(this.state.code_id));
+    }
 
     axios.get('http://localhost:5400/codes/'+this.state.code_id)
     .then((data) => {
@@ -30,7 +38,7 @@ class CodesShow extends React.Component{
 
   render(){
     return(
-      <div className="main-code-container">
+      <div className="main-code-container code">
         <ul>
           <li>
             <div>Code Id:</div>

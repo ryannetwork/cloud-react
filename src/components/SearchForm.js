@@ -17,7 +17,7 @@ class SearchForm extends React.Component {
       total: 0,
       activePage: 1
     }
-  
+
   }
 
   onChange = (event) => {
@@ -80,7 +80,7 @@ class SearchForm extends React.Component {
     );
 
     const searchResultsContainer = (
-      <div className="main-code-container">
+      <div className="main-code-container results">
         <h1>ICD-10 Medical Coding Reference</h1>
         <div className="searchResults">
             <SmallSearchForm />

@@ -36,7 +36,7 @@ class Chapters extends React.Component {
     render() {
 
         return(
-            <div className="main-code-container">
+            <div className="main-code-container chapters">
               <Helmet>
                 <title> ICD-10-CM Chapters List - Lookup any ICD-10 Code by Chapter"</title>
                 <meta name="description" content="" />
