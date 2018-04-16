@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Pagination from "react-js-pagination";
+import SearchResults from './SearchResults';
 import '../css/smallsearchform.css';
 
 class SmallSearchForm extends React.Component {
@@ -34,7 +36,7 @@ class SmallSearchForm extends React.Component {
 
   render() {
 
-    return(
+    const secondarySearchForm = (
       <form className="small-search-form">
         <input type="text"
           onChange={this.onChange}
@@ -43,6 +45,26 @@ class SmallSearchForm extends React.Component {
         <input type="submit" className="button" value="Search" onClick={this.onSearchClick} />
       </form>
 
+    );
+
+    const smallSearchResultsContainer = (
+      <div className="main-code-container results">
+        <h1>ICD-10 Medical Coding Reference</h1>
+        <div className="searchResults">
+          <SmallSearchForm />
+          <SearchResults results={this.state.data} total={this.state.total} inputValue={this.state.inputValue} />
+          <Pagination
+            activePage={this.state.activePage}
+            itemsCountPerPage={50}
+            totalItemsCount={this.state.total}
+            pageRangeDisplayed={5}
+            onChange={this.handlePageChange}
+            />
+        </div>
+      </div>
+    );
+  return (
+    this.state.showResults ? smallSearchResultsContainer : secondarySearchForm
     )
   }
 }
