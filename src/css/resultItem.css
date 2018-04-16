@@ -38,3 +38,12 @@
   font-size: 25px;
   padding: 6px 22px;
 }
+
+.highlighter {
+  display: inline-block;
+  background-color:'#00C9F0';
+  border-radius: '6px';
+  color: #002A5E;
+  font-family: 'ProximaNova-Regular';
+  padding: 0px 5px;
+}

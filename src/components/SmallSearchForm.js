@@ -42,6 +42,7 @@ class SmallSearchForm extends React.Component {
           placeholder="Search" value={this.state.inputValue} />
         <input type="submit" className="button" value="Search" onClick={this.onSearchClick} />
       </form>
+
     )
   }
 }
