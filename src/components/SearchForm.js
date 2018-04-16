@@ -84,7 +84,7 @@ class SearchForm extends React.Component {
         <h1>ICD-10 Medical Coding Reference</h1>
         <div className="searchResults">
             <SmallSearchForm />
-            <SearchResults results={this.state.data} total={this.state.total} inputValue={this.state.inputValue} />
+            <SearchResults results={this.state.data} total={this.state.total} inputValue={this.state.inputValue} user={this.props.user}/>
             <Pagination
               activePage={this.state.activePage}
               itemsCountPerPage={50}

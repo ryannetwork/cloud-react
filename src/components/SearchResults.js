@@ -20,7 +20,7 @@ class SearchResults extends React.Component {
         {searchResult.map((code, index) => {
           return(
             <li key={index}>
-              <ResultItem itemValue={code} key={index} inputValue={inputValue}/>
+              <ResultItem itemValue={code} key={index} inputValue={inputValue} user={this.props.user}/>
             </li>
           )
         })}

@@ -5,7 +5,7 @@ class MainSearch extends React.Component {
 
    render() {
       return (
-          <SearchForm />
+          <SearchForm user={this.props.user}/>
       )
    }
 }

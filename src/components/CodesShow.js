@@ -16,6 +16,18 @@ class CodesShow extends React.Component{
     }
   }
 
+  // createBookmark(){
+  //   // const codeID = this.params.id;
+  //
+  //   axios.post('http://localhost:5400/favorite/create/', {
+  //             // code_id: {codeID},
+  //             // user_id: '1'
+  //         })
+  //         .then((data) => {
+  //           console.log('call to create a favorite')
+  //         })
+  // }
+
   componentWillMount(){
 
     if (localStorage.getItem("recents") !== null){
@@ -27,7 +39,10 @@ class CodesShow extends React.Component{
 
     } else {
       console.log('nothing in local st');
-      localStorage.setItem('recents', [].join(this.state.code_id));
+      var recent = [];
+      recent.push(this.state.code_id);
+      localStorage.setItem('recents', recent);
+      localStorage.setItem('recents', recent.join(this.state.code_id));
     }
 
     axios.get('http://localhost:5400/codes/'+this.state.code_id)
@@ -59,7 +74,7 @@ class CodesShow extends React.Component{
           <ul className="childContainer">
             {this.state.children.map((code, _i) => {
               return(
-                <li className="child">
+                <li className="child" key={_i}>
                   <button className="bookmark"><img src={bookmarkBlue} alt="bookmark"/></button>
                   <p className="code">{code.code_id}</p>
                   <p className="desc">{code.desc}</p>
