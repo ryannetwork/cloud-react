@@ -57,26 +57,32 @@ class PasswordResetForm extends React.Component {
   }
 
   render = () => (
-    <div>
+    <div id="reset">
       <div>{this.state.error}</div>
       <div>{this.state.message}</div>
       <form onSubmit={this.sendVerificationCode}>
-        <label>
-          Username
-          <input type="text" placeholder="username" value={this.state.username} onChange={this.changeUsername} required />
-        </label>
-        <button type="submit">Send verification code</button>
+        <div className="form-group">
+            <label>
+              Username
+              <input className="form-control" type="text" placeholder="username" value={this.state.username} onChange={this.changeUsername} required />
+            </label>
+        </div>
+        <button className="btn btn-primary" type="submit">Send verification code</button>
       </form>
       <form onSubmit={this.onSubmit}>
-        <label>
-          Verification code
-          <input placeholder="code" onChange={this.changeCode} required />
-        </label>
-        <label>
-          Password
-          <input placeholder="new password" onChange={this.changePassword} required />
-        </label>
-        <button type="submit">Set new password</button>
+        <div className="form-group">
+            <label>
+              Verification code
+              <input className="form-control" placeholder="code" onChange={this.changeCode} required />
+            </label>
+        </div>
+        <div className="form-group">
+            <label>
+              Password
+              <input className="form-control" placeholder="new password" onChange={this.changePassword} required />
+            </label>
+        </div>
+        <button className="btn btn-primary" type="submit">Set new password</button>
       </form>
       <Link to="/">Home</Link>
     </div>

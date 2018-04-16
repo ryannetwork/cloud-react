@@ -33,7 +33,6 @@ class ChangePasswordForm extends React.Component {
 
   render = () => (
     <form onSubmit={this.onSubmit}>
-      <div>{this.state.error}</div>
       <div className="form-group">
       <label>
         Old Password

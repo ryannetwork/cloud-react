@@ -23,11 +23,13 @@ class NewPasswordRequiredForm extends React.Component {
   render = () => (
     <form onSubmit={this.onSubmit}>
       <div>{this.props.error}</div>
-      <label>
-        Password
-        <input placeholder="new password" onChange={this.changePassword} required />
-      </label>
-      <button type="submit">Set new password</button>
+      <div className="form-group">
+        <label>
+          Password
+          <input className="form-control" placeholder="new password" onChange={this.changePassword} required />
+        </label>
+      </div>
+      <button className="btn btn-primary" type="submit">Set new password</button>
     </form>
   )
 }

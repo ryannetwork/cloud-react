@@ -63,6 +63,14 @@ h2  {
 	text-align: center;
 }
 
+.history h2 {
+  padding: 40px 0 20px 30px;
+}
+
+.history ul {
+	margin-top: 0;
+}
+
 .rectangle-4 {
 	background: linear-gradient(140.81deg, #3587CA 0%, #002451 100%);
 }

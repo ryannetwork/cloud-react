@@ -23,12 +23,14 @@ class EmailVerificationForm extends React.Component {
   render = () => (
     <form onSubmit={this.onSubmit}>
       <div>{this.props.error}</div>
-      <label>
-        Verification Code
-        <input placeholder="code" onChange={this.changeVerificationCode} required />
-      </label>
-      <button type="submit">Submit</button>
-      <button type="button" onClick={this.props.onCancel}>Cancel</button>
+      <div className="form-group">
+        <label>
+          Verification Code
+          <input className="form-control" placeholder="code" onChange={this.changeVerificationCode} required />
+        </label>
+      </div>
+      <button className="btn btn-primary" type="submit">Submit</button>
+      <button className="btn btn-default" type="button" onClick={this.props.onCancel}>Cancel</button>
     </form>
   )
 }

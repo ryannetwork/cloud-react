@@ -13,15 +13,13 @@ class History extends React.Component {
 
       const codeStorage = localStorage.getItem("recents");
 
-      if (!codeStorage) {
-          return null;
+      if (codeStorage) {
+        var codeHistory = codeStorage.split(',').map((code_id, index) =>
+            <li className="list-item" key={index}>
+                <a className="history-container" href={`/icd-10/codes/${code_id}`}>{code_id}</a>
+            </li>
+        );
       }
-
-      const codeHistory = codeStorage.split(',').map((code_id, index) =>
-          <li className="list-item" key={index}>
-              <a className="history-container" href={`/icd-10/codes/${code_id}`}>{code_id}</a>
-          </li>
-      );
 
       return(
         <div className="main-code-container history">
@@ -29,7 +27,7 @@ class History extends React.Component {
           <SmallSearchForm />
           <h2>Recent codes</h2>
           <ul className="list">
-              {codeStorage ? codeHistory : "nothing to show "}
+              { codeStorage ? codeHistory : "No recent codes" }
           </ul>
         </div>
       )

@@ -19,14 +19,12 @@ import './css/app.css';
 const changePassword = () => (
     <div className="form-group">
       <ChangePasswordForm />
-      <Link to="/icd10">Home</Link>
     </div>
 );
 
 const updateEmail = () => (
     <div className="form-group">
       <UpdateEmailForm />
-      <Link to="/icd10">Home</Link>
     </div>
 );
 
@@ -37,10 +35,9 @@ const passwordReset = () => (
 );
 
 const registerForm = () => (
-    <div className="form-group">
+    <div id="register" className="form-group">
       <p>Complete this form</p>
       <RegisterForm />
-      <Link to="/icd10">Home</Link>
     </div>
 );
 
@@ -49,11 +46,11 @@ class App extends Component {
     return (
       <Router className="router">
     		<div className="form-group val">
-    		  <Route exact path="/icd10" component={Dashboard}/>
-    		  <Route exact path="/icd10/register" component={registerForm}/>
-    		  <Route exact path="/icd10/reset" component={passwordReset}/>
-    		  <Route exact path="/icd10/change_password" component={changePassword}/>
-    		  <Route exact path="/icd10/change_email" component={updateEmail}/>
+    		  <Route path="/" component={Dashboard}/>
+    		  <Route path="/#register" component={registerForm}/>
+    		  <Route path="/#reset" component={passwordReset}/>
+    		  <Route path="/#change_password" component={changePassword}/>
+    		  <Route path="/#change_email" component={updateEmail}/>
     		</div>
     	</Router>
     );

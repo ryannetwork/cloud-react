@@ -54,18 +54,20 @@ class Page extends React.Component {
             <meta property="og:image" content="http://example.com/image.jpg" />
             <meta property="og:description" content="Lookup ICD-10-CM codes in seconds. Our free tool will help you find diagnosis codes, chapters, codes by specialty and much more. Give it a try today!" />
           </Helmet>
+          
           <SideBar onOpenModal={this.onOpenModal} isLoggedIn={this.props.state === "LOGGED_IN"}/>
           <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
-            		  <Route exact path="/icd10" component={MainSearch}/>
-                  <Route exact path="/icd10/bookmarks" component={Bookmarks}/>
-                  <Route exact path="/icd10/search" component={SearchResults}/>
-                  <Route exact path="/icd10/chapters" component={() => (<Chapters list={this.listOfChapterCodes} />)}/>
-                  <Route exact path="/icd10/chapter/:id" render={(props)=> (<Chapter {...props} />)}/>
-                  <Route exact path="/icd10/history" component={History}/>
-                  <Route exact path="/icd-10codes/`{params[:category]}`/`{params[:category]}`" component={SearchResults}/>
-                  <Route exact path="/icd-10/codes/:code_id" render={(props) => (< CodesShow {...props}/>)}/>
-                </div>
-           </BrowserRouter>
+
+    		  <Route exact path="/icd10" component={MainSearch}/>
+          <Route exact path="/icd10/bookmarks" component={Bookmarks}/>
+          <Route exact path="/icd10/search" component={SearchResults}/>
+          <Route exact path="/icd10/chapters" component={() => (<Chapters list={this.listOfChapterCodes} />)}/>
+          <Route exact path="/icd10/chapter/:id" render={(props)=> (<Chapter {...props} />)}/>
+          <Route exact path="/icd10/history" component={History}/>
+          <Route exact path="/icd-10codes/`{params[:category]}`/`{params[:category]}`" component={SearchResults}/>
+          <Route exact path="/icd-10/codes/:code_id" render={(props) => (< CodesShow {...props}/>)}/>
+        </div>
+      </BrowserRouter>
        )
    }
 }
