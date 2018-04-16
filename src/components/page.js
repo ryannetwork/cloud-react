@@ -9,7 +9,7 @@ import Login from './Login';
 import {Helmet} from "react-helmet";
 import Bookmarks from './bookmarks';
 import SearchResults from './SearchResults';
-import Chapters from './chapters';
+import Chapters from './Chapters';
 import History from './History';
 import CodesShow from './CodesShow';
 import Chapter from './Chapter';
