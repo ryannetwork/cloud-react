@@ -37,6 +37,7 @@ class Chapters extends React.Component {
 
         return(
             <div className="main-code-container chapters">
+              <h1 className="icd">ICD-10 Medical Coding Reference</h1>
               <Helmet>
                 <title> ICD-10-CM Chapters List - Lookup any ICD-10 Code by Chapter"</title>
                 <meta name="description" content="" />
@@ -48,7 +49,6 @@ class Chapters extends React.Component {
 " />
               </Helmet>
                 <SmallSearchForm />
-                Chapters:
                 <ChapterItem findChapList={this.passListOfCodes} chapters={this.state.chap}/>
             </div>
         )

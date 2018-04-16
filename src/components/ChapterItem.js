@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import '../css/list.css';
 
 
 class ChapterItem extends React.Component {
@@ -15,15 +16,15 @@ class ChapterItem extends React.Component {
         }
 
         const resultItemEach = resultItem.map((item, index) =>
-            <li key={index}>
+            <li key={index} className="list-item">
                 <a href={'/icd10/chapter/' + item['chapter_number']}>
-                  {item['chapter_number']}: {item['description']}
+                  <span className="item-num">{item['chapter_number']}</span> {item['description']}
                 </a>
             </li>
         );
 
         return (
-            <ul>{resultItemEach}</ul>
+            <ul className="list">{resultItemEach}</ul>
         )
     }
 }

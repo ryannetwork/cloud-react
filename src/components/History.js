@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CodesShow from './CodesShow';
+import SmallSearchForm from './SmallSearchForm';
 
 
 class History extends React.Component {
@@ -17,15 +18,19 @@ class History extends React.Component {
       }
 
       const codeHistory = codeStorage.split(',').map((code_id) =>
-          <li>
+          <li className="list-item">
               <a className="history-container" href={`/icd-10/codes/${code_id}`}>{code_id}</a>
           </li>
       );
 
       return(
         <div className="main-code-container history">
-          <h1>Hey history</h1>
-          {codeStorage ? codeHistory : "nothing to show "}
+          <h1 className="icd">ICD-10 Medical Coding Reference</h1>
+          <SmallSearchForm />
+          <h2>Recent codes</h2>
+          <ul className="list">
+              {codeStorage ? codeHistory : "nothing to show "}
+          </ul>
         </div>
       )
     }

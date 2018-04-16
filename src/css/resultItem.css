@@ -32,17 +32,25 @@
 }
 
 .pagination li a {
-  color: #fffff;
-  background: none;
+  float: none;
+  color: #ffffff !important;
+  background: none!important;
   border: 0;
+  font-family: 'ProximaNova-Bold', serif;
   font-size: 25px;
   padding: 6px 22px;
 }
 
+.pagination li.active a,
+.pagination li a:hover {
+  border-radius: 5px;
+  background: #00C9F0!important;
+}
+
 .highlighter {
   display: inline-block;
-  background-color:'#00C9F0';
-  border-radius: '6px';
+  background:#00C9F0;
+  border-radius: 6px;
   color: #002A5E;
   font-family: 'ProximaNova-Regular';
   padding: 0px 5px;

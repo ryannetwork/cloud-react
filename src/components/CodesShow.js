@@ -1,5 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import '../css/codeshow.css';
+import SmallSearchForm from './SmallSearchForm';
+import bookmark from '../images/bookmarks-icon.png';
+import bookmarkBlue from '../images/bookmark-blue.png';
 
 
 class CodesShow extends React.Component{
@@ -39,29 +43,30 @@ class CodesShow extends React.Component{
   render(){
     return(
       <div className="main-code-container code">
-        <ul>
-          <li>
-            <div>Code Id:</div>
-            <span>{this.state.main.code_id}</span>
-            <div>Description:</div>
-            <span>{this.state.main.desc}</span>
-          </li>
-          <li>
-            <div>Children:</div>
-            <ol>
-              {this.state.children.map((code, _i) => {
-                return(
-                  <li>
-                    <div>Code_id:</div>
-                    <span>{code.code_id}</span>
-                    <div>Description:</div>
-                    <span>{code.desc}</span>
-                  </li>
-                )
-              })}
-            </ol>
-          </li>
-        </ul>
+        <h1 className="icd">ICD-10 Medical Coding Reference</h1>
+        <SmallSearchForm />
+
+          <div className="code-item">
+            <div>
+                <p>{this.state.main.code_id}</p>
+                <p>{this.state.main.desc}</p>
+            </div>
+            <div>
+                <button className="bookmark"><img src={bookmark} alt="bookmark"/>Bookmark</button>
+            </div>
+          </div>
+
+          <ul className="childContainer">
+            {this.state.children.map((code, _i) => {
+              return(
+                <li className="child">
+                  <button className="bookmark"><img src={bookmarkBlue} alt="bookmark"/></button>
+                  <p className="code">{code.code_id}</p>
+                  <p className="desc">{code.desc}</p>
+                </li>
+              )
+            })}
+          </ul>
       </div>
     )
   }
