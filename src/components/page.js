@@ -59,7 +59,7 @@ class Page extends React.Component {
           <Login open={this.state.modalState} onCloseModal={this.onCloseModal}/>
 
     		  <Route exact path="/icd10" render={(props) => <MainSearch {...props} user={this.props.user}/>}/>
-          <Route exact path="/icd10/bookmarks" component={Bookmarks}/>
+          <Route exact path="/icd10/bookmarks" render={(props) => <Bookmarks {...props} user={this.props.user} />}/>
           <Route exact path="/icd10/search" component={SearchResults}/>
           <Route exact path="/icd10/chapters" component={() => (<Chapters list={this.listOfChapterCodes} />)}/>
           <Route exact path="/icd10/chapter/:id" render={(props)=> (<Chapter {...props} />)}/>

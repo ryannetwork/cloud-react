@@ -23,14 +23,26 @@ class ResultItem extends React.Component {
     e.preventDefault();
 
     const codeID = this.props.itemValue.code_id
-    console.log(codeID);
+    console.log("code id is:" + codeID);
 
     if (this.state.saved){
       this.setState({
         srcIndex: 0,
         saved: false
       })
-    }else {
+
+      axios.post("http://localhost:5400/favorite/delete", {
+        headers: { 'Access-Control-Allow-Origin': '*'},
+        favorite: {
+          code_id: codeID,
+          user_id: this.props.user.username
+        }
+      })
+      .then((data) => {
+        console.log("return data from deleting:" + data)
+      })
+
+    } else {
 
       this.setState({
         srcIndex: 1,
@@ -42,9 +54,9 @@ class ResultItem extends React.Component {
                 user_id: this.props.user.username
             })
             .then((data) => {
-              console.log(data)
+              console.log("return after saving bookmark:" + data)
             })
-    }
+      }
 
   }
 
