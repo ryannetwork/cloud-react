@@ -12,13 +12,17 @@ class SearchForm extends React.Component {
     super(props)
     this.state = {
       inputValue: '',
-      data: [],
       showResults: false,
       total: 0,
       activePage: 1
     }
+    this.updateState = this.updateState.bind(this);
 
   }
+
+  updateState(data){
+    this.setState(data);
+   }
 
   onChange = (event) => {
     this.setState({
@@ -31,8 +35,8 @@ class SearchForm extends React.Component {
     axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}`).then((data) => {
       console.log(data.data)
 
+      this.props.updateData(data.data.codes);
       this.setState({
-        data: data.data.codes,
         showResults: true,
         total: data.data.total
       })
@@ -52,8 +56,8 @@ class SearchForm extends React.Component {
     axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}&page=${pageNumber}`)
       .then((data) => {
         console.log(data)
+        this.props.updateData(data.data.codes);
         this.setState({
-          data: data.data.codes,
           showResults: true
         })
 
@@ -83,8 +87,8 @@ class SearchForm extends React.Component {
       <div className="main-code-container results">
         <h1>ICD-10 Medical Coding Reference</h1>
         <div className="searchResults">
-            <SmallSearchForm />
-            <SearchResults results={this.state.data} total={this.state.total} inputValue={this.state.inputValue} user={this.props.user}/>
+            <SmallSearchForm updateData={this.props.updateData} updateState={this.updateState} inputValue={this.state.inputValue}/>
+            <SearchResults results={this.props.data} total={this.state.total} inputValue={this.state.inputValue} user={this.props.user}/>
             <Pagination
               activePage={this.state.activePage}
               itemsCountPerPage={50}
