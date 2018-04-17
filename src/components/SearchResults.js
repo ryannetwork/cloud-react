@@ -15,9 +15,9 @@ class SearchResults extends React.Component {
 
     return(
       <div>
-        <span className="numFound">{searchResult.length} results found</span>
+        <span className="numFound">{this.props.results.length} results found</span>
         <ul className="serchResults">
-        {searchResult.map((code, index) => {
+        {this.props.results.map((code, index) => {
           return(
             <li key={index}>
               <ResultItem itemValue={code} key={index} inputValue={inputValue} user={this.props.user}/>
