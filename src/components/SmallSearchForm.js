@@ -17,12 +17,13 @@ class SmallSearchForm extends React.Component {
 
   onSearchClick = (e) => {
     e.preventDefault()
-    axios.get(`http://localhost:5400/_search.json?q=${this.state.inputValue}`).then((data) => {
+    axios.get(`http://localhost:5400/_search.json?q=${this.props.inputValue}`).then((data) => {
       console.log(data.data)
       this.props.updateData(data.data.codes)
       this.props.updateState({
         data: data.data.codes,
-        total: data.data.total
+        total: data.data.total,
+        activePage: 1
       })
     })
   }
