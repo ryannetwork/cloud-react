@@ -30,41 +30,32 @@ const loggedInPage = (user, attributes) => (
     </ul>
     <div>
       <p>Attributes</p>
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Value</td>
-          </tr>
-        </thead>
-        <tbody>
+      <div>
           {Object.keys(attributes).map(name =>
-            <tr key={name}>
-              <td>{name}</td>
-              <td>{attributes[name]}</td>
-            </tr>,
+            <p key={name}>
+              <span>{name}</span><span>{attributes[name]}</span>
+            </p>
           )}
-        </tbody>
-      </table>
+      </div>
     </div>
   </div>
 );
 
 const loggedOutPage = () => (
-  <div>
+  <div className="here">
     <p>not logged in</p>
     <Login>
       <LoginForm />
     </Login>
     <ul>
-      <li><Link to="/register">Register</Link></li>
-      <li><Link to="/reset">Password reset</Link></li>
+      <li><Link to="/register" className="btn btn-primary">Register</Link></li>
+      <li><Link to="/reset" className="btn btn-default">Password reset</Link></li>
     </ul>
   </div>
 );
 
 const newPasswordPage = () => (
-  <div>
+  <div className="here">
     <p>New password required, since this is your first login</p>
     <NewPasswordRequired>
       <NewPasswordRequiredForm />
@@ -73,7 +64,7 @@ const newPasswordPage = () => (
 );
 
 const emailVerificationPage = () => (
-  <div>
+  <div className="here">
     <p>You must verify your email address.  Please check your email for a code</p>
     <EmailVerification>
       <EmailVerificationForm />
@@ -82,7 +73,7 @@ const emailVerificationPage = () => (
 );
 
 const confirmForm = () => (
-  <div>
+  <div className="here">
     <p>A confirmation code has been sent to your email address</p>
     <Confirm>
       <ConfirmForm />

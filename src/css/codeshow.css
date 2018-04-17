@@ -55,6 +55,11 @@
   width: 20%;
 }
 
+.child .icon {
+  width: 20px;
+  height: 39px;
+}
+
 .child .desc {
   font-size: 28px;
   color: #ffffff;

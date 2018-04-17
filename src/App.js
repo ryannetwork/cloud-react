@@ -29,7 +29,7 @@ const updateEmail = () => (
 );
 
 const passwordReset = () => (
-  <PasswordReset>
+    <PasswordReset>
       <PasswordResetForm/>
     </PasswordReset>
 );

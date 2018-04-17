@@ -4,6 +4,8 @@ import '../css/codeshow.css';
 import SmallSearchForm from './SmallSearchForm';
 import bookmark from '../images/bookmarks-icon.png';
 import bookmarkBlue from '../images/bookmark-blue.png';
+import bookmarkFilledBlue from '../images/blue-filled.png';
+import arrow from '../images/share.svg';
 
 
 class CodesShow extends React.Component{
@@ -12,21 +14,11 @@ class CodesShow extends React.Component{
     this.state = {
       code_id: this.props.match.params.code_id,
       main: {},
-      children: []
+      children: [],
+      srcIndex: 0
     }
+    this.bookmarkImages = [ bookmarkBlue, bookmarkFilledBlue];
   }
-
-  // createBookmark(){
-  //   // const codeID = this.params.id;
-  //
-  //   axios.post('http://localhost:5400/favorite/create/', {
-  //             // code_id: {codeID},
-  //             // user_id: '1'
-  //         })
-  //         .then((data) => {
-  //           console.log('call to create a favorite')
-  //         })
-  // }
 
   componentWillMount(){
 
@@ -56,6 +48,10 @@ class CodesShow extends React.Component{
   }
 
   render(){
+
+    var bookmarkIcon = this.bookmarkImages[this.state.srcIndex];
+    console.log(bookmarkIcon);
+
     return(
       <div className="main-code-container code">
         <h1 className="icd">ICD-10 Medical Coding Reference</h1>
@@ -75,7 +71,8 @@ class CodesShow extends React.Component{
             {this.state.children.map((code, _i) => {
               return(
                 <li className="child" key={_i}>
-                  <button className="bookmark"><img src={bookmarkBlue} alt="bookmark"/></button>
+                  <button className="bookmark"><img src={bookmarkIcon} alt="bookmark"/></button>
+                  <img src={arrow} alt="arrow" className="arrow icon" />
                   <p className="code">{code.code_id}</p>
                   <p className="desc">{code.desc}</p>
                 </li>
