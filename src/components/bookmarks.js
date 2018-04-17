@@ -5,23 +5,30 @@ import axios from 'axios';
 
 
 class Bookmarks extends React.Component {
+  constructor(props){
+    super(props)
+  }
 
    componentWillMount(){
-      const user = this.props.user.username;
-      axios.get(`http://localhost:5400/favorite/${user}`)
-           .then((data) => {
-               console.log(data);
-            })
-            .catch(function (error) {
-               console.log(error);
-            })
+
+      axios.get(`http://localhost:5400/favorite/${this.props.user.username}`)
+     .then((response) => {
+       for(var key in response){
+         console.log(response[key])
+       }
+      })
+      .catch(function (error) {
+         console.log("error: " + error);
+      })
    }
 
    render() {
+
        return (
          <div className="main-code-container bookmarks">
             <h1 className="icd">ICD-10 Medical Coding Reference</h1>
             <SmallSearchForm />
+            {this.props.user.username ? this.props.user.username : "Please log in to be able to create bookmarks"}
 
          </div>
        )
